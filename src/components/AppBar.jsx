@@ -2,6 +2,7 @@ import React from 'react';
 import { View, StyleSheet, Text } from 'react-native';
 import Constants from 'expo-constants';
 import { TouchableWithoutFeedback } from 'react-native-web';
+import { Link } from 'react-router-native';
 
 const styles = StyleSheet.create({
   container: {
@@ -19,8 +20,17 @@ const styles = StyleSheet.create({
 const AppBar = () => {
   return <View style={styles.container}>
     <TouchableWithoutFeedback>
+    <Link to="/">
         <Text style={styles.text}>Repositories</Text>
-    </TouchableWithoutFeedback></View>;
+    </Link> 
+    </TouchableWithoutFeedback>
+    
+    <TouchableWithoutFeedback>
+    <Link to="/signin">
+    <Text style={styles.text}>Sign in</Text>
+    </Link>
+    </TouchableWithoutFeedback>
+    </View>;
 };
 
 export default AppBar;
