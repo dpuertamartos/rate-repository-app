@@ -1,5 +1,5 @@
 import React from 'react';
-import { View, StyleSheet, Text } from 'react-native';
+import { View, StyleSheet, Text, ScrollView } from 'react-native';
 import Constants from 'expo-constants';
 import { TouchableWithoutFeedback } from 'react-native-web';
 import { Link } from 'react-router-native';
@@ -14,23 +14,30 @@ const styles = StyleSheet.create({
   text: {
     color:"#FFFFFF",
     fontWeight: "bold",
+  },
+  column: {
+    marginLeft: 15,
+    marginRight: 15
   }
 });
 
 const AppBar = () => {
   return <View style={styles.container}>
+    <ScrollView horizontal>
     <TouchableWithoutFeedback>
-    <Link to="/">
+    <Link to="/" style={styles.column}>
         <Text style={styles.text}>Repositories</Text>
     </Link> 
     </TouchableWithoutFeedback>
     
-    <TouchableWithoutFeedback>
-    <Link to="/signin">
+    <TouchableWithoutFeedback >
+    <Link to="/signin" style={styles.column}>
     <Text style={styles.text}>Sign in</Text>
     </Link>
     </TouchableWithoutFeedback>
-    </View>;
+    </ScrollView>
+    </View>
+    ;
 };
 
 export default AppBar;
