@@ -61,7 +61,7 @@ const RepositoryList = () => {
   const renderItem = ({ item }) => (
     <RepositoryItem name={item.fullName} description={item.description} language={item.language}
     stars={item.stargazersCount} forks={item.forksCount} reviews={item.reviewCount}
-    rating={item.ratingAverage}   />
+    rating={item.ratingAverage} imagelink={item.ownerAvatarUrl}  />
   );
   return (
     <FlatList

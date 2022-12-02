@@ -7,49 +7,25 @@ import Text from './Text';
 
 const styles = StyleSheet.create({
   container: {
-    marginTop: Constants.statusBarHeight,
     flexGrow: 1,
     flexShrink: 1,
-  },
-  flexContainer: {
-    flexDirection: 'row',
-  },
-  flexItemA: {
-    flexGrow: 0,
-    backgroundColor: 'green',
-  },
-  flexItemB: {
-    flexGrow: 1,
-    backgroundColor: 'blue',
+    backgroundColor: "#e1e4e8"
   },
 });
 
-const FlexboxExample = () => {
-  return (
-    <View style={styles.flexContainer}>
-      <View style={styles.flexItemA}>
-        <Text>Flex item A</Text>
-      </View>
-      <View style={styles.flexItemB}>
-        <Text>Flex item B</Text>
-      </View>
-    </View>
-  );
-};
 
 const Main = () => {
   return (
-    <>
+    <View style={styles.container}>
       <AppBar />
-      <Text>Simple text</Text>
+{/*       <Text>Simple text</Text>
       <Text style={{ paddingBottom: 10 }}>Text with custom style</Text>
       <Text fontWeight="bold" fontSize="subheading">
         Bold subheading
       </Text>
-      <Text color="textSecondary">Text with secondary color</Text>
-      <FlexboxExample />
+      <Text color="textSecondary">Text with secondary color</Text> */}
       <RepositoryList />
-    </>
+    </View>
   );
 };
 
