@@ -6,6 +6,8 @@ import * as yup from 'yup';
 import FormikTextInput from './FormikTextInput';
 import theme from '../theme';
 
+import useSignIn from '../hooks/useSignIn';
+
 const validationSchema = yup.object().shape({
   username: yup
     .string()
@@ -52,15 +54,17 @@ const SignInForm = ({ onSubmit }) => {
 
 
 const SignIn = () => {
-  const onSubmit = values => {
-    console.log(values);
-    // const mass = parseFloat(values.mass);
-    // const height = parseFloat(values.height);
+  const [signIn] = useSignIn();
+  
+  const onSubmit = async (values) => {
+    const { username, password } = values;
 
-    // if (!isNaN(mass) && !isNaN(height) && height !== 0) {
-    //   console.log(`Your body mass index is: ${getBodyMassIndex(mass, height)}`);
-    // }
-
+    try {
+      const { data } = await signIn({ username, password });
+      console.log(data);
+    } catch (e) {
+      console.log(e);
+    }
   };
 
   return (
